@@ -1,15 +1,11 @@
 项目需求：
-分析一号店（www.yihaodian.com）用户行为日志，
+分析电商网站一号店（www.yihaodian.com）的用户行为日志
 根据pagestat, province等分别统计用户行为，进而为以下业务做准备
 	历史行为数据
 	推荐
 	订单的转换量/率
 
-用户行为日志实例如下，其中
+用户行为日志实例中重点分析字段
 	第二个字段：url
 	第十四字段：ip
 	第十八字段：time
-20946835322http://www.yihaodian.com/1/?tracker_u=2225501&type=3http://www.baidu.com/s?wd=1%E5%8F%B7%E5%BA%97&rsv_bp=0&ch=&tn=baidu&bar=&rsv_spt=3&ie=utf-8&rsv_sug3=5&rsv_sug=0&rsv_sug1=4&rsv_sug4=313&inputT=42351号店1SKAPHD3JZYH9EE9ACB1NGA9VDQHNJMX1NY9TPPG4SWG71358HGRJGQHQQBXY9GF96CVU2225501\N124.79.172.232msessionid:YR9H5YU7RZ8Y94EBJNZ2P5W8DT37Q9JH,unionKey:22255012013-07-21 09:30:01\Nhttp://www.baidu.com/s?wd=1%E5%8F%B7%E5%BA%97&rsv_bp=0&ch=&tn=baidu&bar=&rsv_spt=3&ie=utf-8&rsv_sug3=5&rsv_sug=0&rsv_sug1=4&rsv_sug4=313&inputT=42351\Nnull-10Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; MATP; Media Center PC 6.0; .NET4.0C; InfoPath.2; .NET4.0E)Win32上海市12013-07-21 09:30:01上海市66\N\N\N\N2013-07-21
-20947290187http://www.yihaodian.com/ctg/s2/c5287-%E5%A4%A7%E7%B1%B3/b/a28186,28184-s1-v0-p1-price-d0-f0-m1-rt0-pid-k/1/http://www.yihaodian.com/ctg/s2/c5287-%E5%A4%A7%E7%B1%B3/b1879/a281862SKAPHD3JZYH9EE9ACB1NGA9VDQHNJMX1NY9TPPG4SWG71358HGRJGQHQQBXY9GF96CVU22255011124.79.172.232msessionid:YR9H5YU7RZ8Y94EBJNZ2P5W8DT37Q9JH,uname:chen45311,unionKey:22255012013-07-21 09:32:30134885852http://www.baidu.com/s?wd=1%E5%8F%B7%E5%BA%97&rsv_bp=0&ch=&tn=baidu&bar=&rsv_spt=3&ie=utf-8&rsv_sug3=5&rsv_sug=0&rsv_sug1=4&rsv_sug4=313&inputT=4235110\N1-10Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; MATP; Media Center PC 6.0; .NET4.0C; InfoPath.2; .NET4.0E)Win32 93 1search_order_2上海市1null上海市66\N\N\N\N2013-07-21
-20947323490http://www.yihaodian.com/cmsPage/show.do?pageId=49248&provinceId=1http://www.yihaodian.com/cmsPage/show.do?pageId=48963&provinceId=13SKAPHD3JZYH9EE9ACB1NGA9VDQHNJMX1NY9TPPG4SWG71358HGRJGQHQQBXY9GF96CVU2225501\N124.79.172.232msessionid:YR9H5YU7RZ8Y94EBJNZ2P5W8DT37Q9JH,uname:chen45311,unionKey:22255012013-07-21 09:37:04134885852http://www.baidu.com/s?wd=1%E5%8F%B7%E5%BA%97&rsv_bp=0&ch=&tn=baidu&bar=&rsv_spt=3&ie=utf-8&rsv_sug3=5&rsv_sug=0&rsv_sug1=4&rsv_sug4=313&inputT=423520\N1-10Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; MATP; Media Center PC 6.0; .NET4.0C; InfoPath.2; .NET4.0E)Win32cms_pic_48963_542760_0上海市1上海市66\N\N\N\N2013-07-21
-20947273602https://passport.yihaodian.com/passport/login_input.dohttp://www.yihaodian.com/1/?tracker_u=2225501&type=33SKAPHD3JZYH9EE9ACB1NGA9VDQHNJMX1NY9TPPG4SWG71358HGRJGQHQQBXY9GF96CVU2225501\N124.79.172.232msessionid:YR9H5YU7RZ8Y94EBJNZ2P5W8DT37Q9JH,unionKey:22255012013-07-21 09:30:11\Nhttp://www.baidu.com/s?wd=1%E5%8F%B7%E5%BA%97&rsv_bp=0&ch=&tn=baidu&bar=&rsv_spt=3&ie=utf-8&rsv_sug3=5&rsv_sug=0&rsv_sug1=4&rsv_sug4=313&inputT=42353\N1-10Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; MATP; Media Center PC 6.0; .NET4.0C; InfoPath.2; .NET4.0E)Win32YHD_TOP_login上海市1上海市66\N\N\N\N2013-07-21
